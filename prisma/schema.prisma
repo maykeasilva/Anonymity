@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    String @id @default(uuid())
+  name  String
+  email String @unique
+
+  questions Question[]
+
+  @@map("users")
+}
+
+model Question {
+  id              String   @id @default(cuid())
+  userId          String   @map("user_id")
+  slug            String   @unique
+  body            String
+  answerPerPerson Int?     @map("answer_per_person")
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  user    User     @relation(fields: [userId], references: [id])
+  answers Answer[]
+
+  @@map("questions")
+}
+
+model Answer {
+  id         String @id @default(cuid())
+  questionId String @map("question_id")
+  body       String
+
+  question Question @relation(fields: [questionId], references: [id])
+
+  @@map("answers")
+}
