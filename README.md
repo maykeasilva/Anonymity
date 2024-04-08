@@ -5,6 +5,7 @@
 - **Node.js**
 - **Typescript**
 - **Postgres** 
+
 # Functional requirements
 >It should be able to:
 - [ ] authenticate via **email**

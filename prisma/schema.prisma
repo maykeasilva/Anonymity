@@ -22,7 +22,7 @@ model Question {
   userId          String    @map("user_id")
   slug            String
   body            String
-  answerPerPerson Int?      @map("answer_per_person")
+  answersPerPerson Int?      @map("answer_per_person")
   closedAt        DateTime? @map("closed_at")
   createdAt       DateTime  @default(now()) @map("created_at")
 

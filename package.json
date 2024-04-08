@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test": "vitest run --dir ./src/use-cases",
+    "test:watch": "vitest --dir ./src/use-cases",
     "migrate": "prisma migrate dev",
     "studio": "prisma studio"
   },
@@ -14,7 +16,9 @@
     "@types/node": "20.12.5",
     "prisma": "5.12.1",
     "tsx": "4.7.2",
-    "typescript": "5.4.4"
+    "typescript": "5.4.4",
+    "vite-tsconfig-paths": "4.3.2",
+    "vitest": "1.4.0"
   },
   "dependencies": {
     "@prisma/client": "5.12.1",
