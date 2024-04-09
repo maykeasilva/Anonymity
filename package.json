@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "vitest run --dir ./src/use-cases",
-    "test:watch": "vitest --dir ./src/use-cases",
+    "test":       "vitest run --dir ./src/use-cases",
+    "test:watch": "vitest     --dir ./src/use-cases",
     "migrate": "prisma migrate dev",
-    "studio": "prisma studio"
+    "studio":  "prisma studio"
   },
   "keywords": [],
   "author": "",

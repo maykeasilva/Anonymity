@@ -4,6 +4,16 @@ import { QuestionsRepository } from '../questions-repository'
 export class InMemoryQuestionsRepository implements QuestionsRepository {
   public database: Question[] = []
   
+  async findById(id: string) {
+    const question = this.database.find((item) => item.id === id)
+
+    if (!question) {
+      return null
+    }
+
+    return question
+  }
+ 
   async create(data: Prisma.QuestionUncheckedCreateInput) {
     const question = {
       id: data.id ?? this.database.length + 1,
